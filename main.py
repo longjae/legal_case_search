@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 from common import langsmith
 
 load_dotenv()
-langsmith("LEGAL_CASE_SEARCH_CHATBOT")
 
 data = make_metadata("./data")
 retriever = create_retriever(data)
