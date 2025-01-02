@@ -10,21 +10,22 @@ template: |
   2. Ensure complete contextuality: Address all aspects of the query, linking back to specific details in the context.
   3. Avoid phrases like "In the context provided" or "According to my knowledge."
   4. When you answer a question, avoid summarizing the question or keep it short so that you can focus more on your answer.
-  5. Only answer the question as it is asked. You don't need to provide additional explanations.
-  6. Use metadata in your answer, if necessary.
+  5. When answering, please include information from the metadata in the #Context below.
+    Please use bullet points to describe the metadata information.
+    The key to the metadata in #Context is as follows.
+    - caseField: 사건 유형 / 1: 민사, 2: 형사, 3: 행정
+    - detailField: 세부 유형 / 1: 민사, 2: 신청, 3: 가사, 4: 특허, 5: 행정, 6: 형사
+    - trailField: 심급 유형 / 1: 1심, 2: 2심
+    - caseNm: 사건명
+    - courtNm: 법원명
+    - judmnAdjuDe: 판결 선고일
+    - caseNo: 사건 번호
+    - relateLaword: 관련 법령
+  6. Only answer the question as it is asked. You don't need to provide additional explanations.
+  7. If asked how many years the defendant will receive, must respond by stating that you expect the defendant to receive a sentence.
+  8. When answering using #Chat_history, the metadata information expressed in bullet points is not informative.
 
-  Given the guidelines, please answer the question based on the following context.
-
-  Key information in the context is as follows:
-  file_path: 파일 경로
-  caseField: 사건 유형 / 1: 민사, 2: 형사, 3: 행정
-  detailField: 세부 유형 / 1: 민사, 2: 신청, 3: 가사, 4: 특허, 5: 행정, 6: 형사
-  trailField: 심급 유형 / 1: 1심, 2: 2심
-  caseNm: 사건명
-  courtNm: 법원명
-  judmnAdjuDe: 판결 선고일
-  caseNo: 사건 번호
-  relateLaword: 관련 법령
+  Please answer using the guidelines and the metadata key information in #Context.
 
   #Chat_history
   {chat_history}
@@ -36,5 +37,4 @@ template: |
   {context}
 
   #Answer:
-input_variables: ["chat_history", "question", "context"
-]
+input_variables: ["chat_history", "question", "context"]

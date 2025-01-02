@@ -1,5 +1,9 @@
 # Legal Case Search
 
+<p align="center">
+  <img src="./img/img2.png">
+</p>
+
 - 사건과 연관성이 있는 법률 또는 예상 형량에 대해 검색하는 기능 수행
 - AIHub의 법률/규정 (판결서, 약관 등) 텍스트 분석 데이터 중 형사 데이터셋 사용(validation/293건)
 - BM25 Retriever를 통해 검색기 성능 향상

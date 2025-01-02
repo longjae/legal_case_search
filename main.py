@@ -26,7 +26,6 @@ if "memory" not in st.session_state:
     st.session_state["memory"] = ConversationBufferMemory(
         return_messages=True, memory_key="chat_history"
     )
-print(st.session_state["memory"].load_memory_variables({}))
 
 # 대화 초기화 버튼
 with st.sidebar:
@@ -57,4 +56,3 @@ if user_input:
         st.session_state["memory"].save_context(
             {"user": user_input}, {"assistant": ai_answer}
         )
-        print(st.session_state["memory"].load_memory_variables({}))
